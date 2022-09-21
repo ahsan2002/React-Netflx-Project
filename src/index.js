@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import Card from "./Components/Card";
 import Sdata from "./Sdata";
 import "./index.css";
@@ -16,11 +16,12 @@ function ncard(val){
     );
 }
 
-ReactDOM.render(
+const root=ReactDOM.createRoot(document.getElementById("root"))
+root.render(
     <>
     <h1 className='heading'>List of Top 5 Netflix in 2022</h1>
     
     {Sdata.map(ncard)}
    </>
-    ,document.getElementById("root")
+    
 );
